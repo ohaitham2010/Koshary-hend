@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>كشري هند | هيا</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#232323;
+    --ink-2:#2e2e2e;
+    --orange:#e8531a;
+    --orange-2:#ff7a35;
+    --paper:#fff6ee;
+    --line:#4a4a4a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Cairo',Tahoma,Arial,sans-serif;background:var(--ink);color:var(--paper);line-height:1.7}
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:3px solid var(--orange-2);outline-offset:3px}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+  /* header */
+  header{position:sticky;top:0;z-index:10;background:rgba(35,35,35,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-weight:900;font-size:1.5rem;color:var(--orange-2)}
+  nav{display:flex;gap:18px;font-weight:600}
+  nav a:hover{color:var(--orange-2)}
+
+  /* hero */
+  .hero{background:linear-gradient(160deg,var(--orange) 0%,#c93d0c 100%);color:#fff;padding:64px 0 72px;text-align:center}
+  .hero h1{font-size:clamp(3.2rem,15vw,7rem);font-weight:900;line-height:1.1;letter-spacing:-1px}
+  .hero p{font-size:1.2rem;margin:12px auto 28px;max-width:34ch}
+  .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 26px;border-radius:999px;font-weight:800;border:2px solid #fff;transition:transform .15s}
+  .btn:active{transform:scale(.96)}
+  .btn.solid{background:#fff;color:var(--orange)}
+  .btn.ghost{color:#fff}
+
+  /* menu */
+  section{padding:56px 0}
+  h2{font-size:2rem;font-weight:900;color:var(--orange-2);margin-bottom:20px}
+  .tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;margin-bottom:22px}
+  .tab{flex:none;font:inherit;font-weight:700;padding:8px 20px;border-radius:999px;border:2px solid var(--orange);background:transparent;color:var(--paper);cursor:pointer}
+  .tab[aria-selected="true"]{background:var(--orange);color:#fff}
+  .panel{background:var(--ink-2);border:2px solid var(--orange);border-radius:18px;padding:12px 22px}
+  .item{display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:1.1rem}
+  .item:last-child{border-bottom:0}
+  .item .dots{flex:1;border-bottom:2px dotted #666;transform:translateY(-4px)}
+  .item .price{font-weight:800;color:var(--orange-2);white-space:nowrap}
+  .item .price small{font-weight:400;color:#bbb;margin-inline-start:4px}
+
+  /* contact */
+  .contact{background:var(--paper);color:var(--ink)}
+  .contact h2{color:var(--orange)}
+  .addr{font-size:1.2rem;font-weight:700;margin-bottom:22px}
+  .phones{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .phone{display:flex;align-items:center;justify-content:space-between;background:var(--ink);color:#fff;border-radius:14px;padding:14px 18px;font-weight:800;font-size:1.15rem;direction:ltr}
+  .phone span{color:var(--orange-2);font-size:.9rem;font-weight:600;direction:rtl}
+  footer{text-align:center;padding:22px;color:#aaa;font-size:.9rem}
+  @media (max-width:520px){nav{display:none}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#top" class="brand">كشري هند</a>
+    <nav>
+      <a href="#menu">المنيو</a>
+      <a href="#contact">العنوان</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <h1>كشري هند</h1>
+      <p>كشري، طواجن وحواوشي طازة كل يوم في هيا.</p>
+      <div class="btns">
+        <a class="btn solid" href="#menu">شوف المنيو</a>
+        <a class="btn ghost" href="https://wa.me/201001987268" target="_blank" rel="noopener">اطلب على واتساب</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="menu">
+    <div class="wrap">
+      <h2>المنيو</h2>
+      <div class="tabs" role="tablist" id="tabs"></div>
+      <div class="panel" id="panel" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>العنوان</h2>
+      <p class="addr">📍 هيا – شارع أحمد عرابي – خلف المحطة</p>
+      <div class="phones">
+        <a class="phone" href="tel:01001987268"><span>اتصل</span>01001987268</a>
+        <a class="phone" href="tel:01154047825"><span>اتصل</span>01154047825</a>
+        <a class="phone" href="tel:01281055699"><span>اتصل</span>01281055699</a>
+        <a class="phone" href="tel:01150872095"><span>اتصل</span>01150872095</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© كشري هند</footer>
+
+<script>
+  // بيانات المنيو – عدّل الأسعار والأصناف من هنا
+  const menu = {
+    "كشري": [
+      ["شبح",25],["ميجا",30],["جامبو",35],["هند",45],["هند عائلي",55],["كشري كبدة",60]
+    ],
+    "طواجن": [
+      ["طاجن لحمة",50],["طاجن فراخ",60],["طاجن فراخ موزاريلا",75],
+      ["طاجن لحمة موزاريلا",70],["طاجن لحمة ميكس",65],["طاجن فراخ ميكس",70],
+      ["طاجن اسباجيتي فراخ",70],["طاجن اسباجيتي لحمة",65],["طاجن اسباجيتي كبدة",60]
+    ],
+    "حواوشي": [
+      ["حواوشي لحمة",45],["حواوشي لحمة موزاريلا",95],
+      ["حواوشي فراخ موزاريلا",100],["حواوشي فراخ",50]
+    ],
+    "الحلو": [
+      ["أرز سادة",22],["أرز فرن",25],["أرز مكسرات",30],["أرز كنافة",30],
+      ["أم علي",25],["كاستر جيلي",25],["قنبلة شيكولاتة",35],["قنبلة مانجا",35],
+      ["قنبلة كريمة",35],["فادج",40],["مولتن كيك",70],["كريم كراميل",25]
+    ],
+    "الإضافات": [
+      ["تقلية",10],["حمص",10],["عدس",10],["صلصة",10],["عيش",10],
+      ["سلطة",10],["مياه معدنية",10],["بيبسي",20],["خيار مخلل",10]
+    ]
+  };
+
+  const tabs = document.getElementById('tabs');
+  const panel = document.getElementById('panel');
+
+  function show(name){
+    panel.innerHTML = menu[name].map(([n,p]) =>
+      `<div class="item"><span>${n}</span><span class="dots"></span><span class="price">${p}<small>ج</small></span></div>`
+    ).join('');
+    tabs.querySelectorAll('.tab').forEach(t =>
+      t.setAttribute('aria-selected', t.textContent === name));
+  }
+
+  Object.keys(menu).forEach((name, i) => {
+    const b = document.createElement('button');
+    b.className = 'tab';
+    b.role = 'tab';
+    b.textContent = name;
+    b.onclick = () => show(name);
+    tabs.appendChild(b);
+  });
+
+  show(Object.keys(menu)[0]);
+</script>
+</body>
+</html>
